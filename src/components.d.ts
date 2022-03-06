@@ -6,7 +6,35 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface MyComponent {
+    interface WebshopCart {
+        /**
+          * The first name
+         */
+        "first": string;
+        /**
+          * The last name
+         */
+        "last": string;
+        /**
+          * The middle name
+         */
+        "middle": string;
+    }
+    interface WebshopCheckout {
+        /**
+          * The first name
+         */
+        "first": string;
+        /**
+          * The last name
+         */
+        "last": string;
+        /**
+          * The middle name
+         */
+        "middle": string;
+    }
+    interface WebshopItem {
         /**
           * The first name
          */
@@ -22,18 +50,60 @@ export namespace Components {
     }
 }
 declare global {
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
+    interface HTMLWebshopCartElement extends Components.WebshopCart, HTMLStencilElement {
     }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
+    var HTMLWebshopCartElement: {
+        prototype: HTMLWebshopCartElement;
+        new (): HTMLWebshopCartElement;
+    };
+    interface HTMLWebshopCheckoutElement extends Components.WebshopCheckout, HTMLStencilElement {
+    }
+    var HTMLWebshopCheckoutElement: {
+        prototype: HTMLWebshopCheckoutElement;
+        new (): HTMLWebshopCheckoutElement;
+    };
+    interface HTMLWebshopItemElement extends Components.WebshopItem, HTMLStencilElement {
+    }
+    var HTMLWebshopItemElement: {
+        prototype: HTMLWebshopItemElement;
+        new (): HTMLWebshopItemElement;
     };
     interface HTMLElementTagNameMap {
-        "my-component": HTMLMyComponentElement;
+        "webshop-cart": HTMLWebshopCartElement;
+        "webshop-checkout": HTMLWebshopCheckoutElement;
+        "webshop-item": HTMLWebshopItemElement;
     }
 }
 declare namespace LocalJSX {
-    interface MyComponent {
+    interface WebshopCart {
+        /**
+          * The first name
+         */
+        "first"?: string;
+        /**
+          * The last name
+         */
+        "last"?: string;
+        /**
+          * The middle name
+         */
+        "middle"?: string;
+    }
+    interface WebshopCheckout {
+        /**
+          * The first name
+         */
+        "first"?: string;
+        /**
+          * The last name
+         */
+        "last"?: string;
+        /**
+          * The middle name
+         */
+        "middle"?: string;
+    }
+    interface WebshopItem {
         /**
           * The first name
          */
@@ -48,14 +118,18 @@ declare namespace LocalJSX {
         "middle"?: string;
     }
     interface IntrinsicElements {
-        "my-component": MyComponent;
+        "webshop-cart": WebshopCart;
+        "webshop-checkout": WebshopCheckout;
+        "webshop-item": WebshopItem;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "webshop-cart": LocalJSX.WebshopCart & JSXBase.HTMLAttributes<HTMLWebshopCartElement>;
+            "webshop-checkout": LocalJSX.WebshopCheckout & JSXBase.HTMLAttributes<HTMLWebshopCheckoutElement>;
+            "webshop-item": LocalJSX.WebshopItem & JSXBase.HTMLAttributes<HTMLWebshopItemElement>;
         }
     }
 }

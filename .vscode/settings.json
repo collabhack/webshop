@@ -2,7 +2,11 @@
 	"files.exclude": {
 		".*": true,
 		"*.json": true,
+		"stencil.config.ts": true,
+		"src/components.d.ts": true,
 		"dist": true,
+		"www": true,
+		"loader": true,
 		"README.md": true,
 		"LICENSE": true,
 		"tsconfig.*": true,
@@ -26,13 +30,16 @@
 	"cSpell.words": [
 		"authly",
 		"cloudly",
+		"Collabhack",
 		"cryptly",
 		"detokenize",
 		"flagly",
 		"gracely",
+		"intergiro",
 		"isoly",
 		"langly",
 		"paramly",
+		"payfunc",
 		"persistly",
 		"selectivly",
 		"servly",
@@ -40,6 +47,7 @@
 		"smoothly",
 		"tidily",
 		"transactly",
-		"uply"
+		"uply",
+		"Webshop"
 	]
 }

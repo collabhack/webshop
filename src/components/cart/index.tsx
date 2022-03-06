@@ -1,12 +1,11 @@
 import { Component, h, Prop } from "@stencil/core"
-import { format } from "../../utils/utils"
 
 @Component({
-	tag: "my-component",
-	styleUrl: "my-component.css",
-	shadow: true,
+	tag: "webshop-cart",
+	styleUrl: "style.css",
+	scoped: true,
 })
-export class MyComponent {
+export class WebshopCart {
 	/**
 	 * The first name
 	 */
@@ -23,7 +22,7 @@ export class MyComponent {
 	@Prop() last: string
 
 	private getText(): string {
-		return format(this.first, this.middle, this.last)
+		return this.first + this.middle + this.last
 	}
 
 	render() {
