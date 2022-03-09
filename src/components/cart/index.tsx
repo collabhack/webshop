@@ -1,5 +1,4 @@
-import { Component, ComponentDidLoad, h, State } from "@stencil/core"
-import * as intergiro from "@payfunc/model"
+import { Component, ComponentDidLoad, h, Prop, State } from "@stencil/core"
 import { Cart } from "../../model/Cart"
 
 @Component({
@@ -8,12 +7,24 @@ import { Cart } from "../../model/Cart"
 	scoped: true,
 })
 export class WebshopCart implements ComponentDidLoad {
-	@State() cart: Cart
+	@Prop() currency = "SEK"
+	@State() cart?: Cart
+	@State() open: boolean
 	componentDidLoad(): void {
 		Cart.current.listen(cart => (this.cart = cart))
 	}
 
 	render() {
-		return [<h1>Cart</h1>, <div>{this.cart.items.length} items</div>]
+		return [
+			<h1>Cart</h1>,
+			<div>{this.cart?.items.length} items</div>,
+			this.cart?.items.map(item => (
+				<p>
+					<span>{item.quantity}</span>
+					<strong>{item.name}</strong>
+					{(item.price ?? 0) * (item.quantity ?? 1)} {this.currency}
+				</p>
+			)),
+		]
 	}
 }

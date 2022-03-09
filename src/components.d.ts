@@ -7,6 +7,7 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface WebshopCart {
+        "currency": string;
     }
     interface WebshopCheckout {
     }
@@ -43,6 +44,7 @@ declare global {
 }
 declare namespace LocalJSX {
     interface WebshopCart {
+        "currency"?: string;
     }
     interface WebshopCheckout {
     }

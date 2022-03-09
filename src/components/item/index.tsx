@@ -11,15 +11,17 @@ export class WebshopItem {
 	@Prop() name: string
 	@Prop() price: string
 	@Prop() number: string
+	element: HTMLInputElement
 	render() {
 		return (
 			<div>
+				<input type="number" value={1} ref={(e: HTMLInputElement) => (this.element = e)}></input>
 				{this.name}
 				<button
 					onClick={() =>
 						Cart.current.add({
 							name: this.name,
-							quantity: 1,
+							quantity: Number.parseInt(this.element.value),
 							price: Number.parseFloat(this.price),
 							number: this.number,
 						})
