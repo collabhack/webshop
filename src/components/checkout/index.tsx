@@ -1,31 +1,17 @@
-import { Component, h, Prop } from "@stencil/core"
+import { Component, ComponentDidLoad, h, State } from "@stencil/core"
+import { Cart } from "../../model/Cart"
 
 @Component({
 	tag: "webshop-checkout",
 	styleUrl: "style.css",
 	scoped: true,
 })
-export class WebshopCart {
-	/**
-	 * The first name
-	 */
-	@Prop() first: string
-
-	/**
-	 * The middle name
-	 */
-	@Prop() middle: string
-
-	/**
-	 * The last name
-	 */
-	@Prop() last: string
-
-	private getText(): string {
-		return this.first + this.middle + this.last
+export class WebshopCheckout implements ComponentDidLoad {
+	@State() cart: Cart
+	componentDidLoad(): void {
+		Cart.current.listen(cart => (this.cart = cart))
 	}
-
 	render() {
-		return <div>Hello, World! I'm {this.getText()}</div>
+		return <div>Hello, World! I'm</div>
 	}
 }

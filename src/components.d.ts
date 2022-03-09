@@ -9,18 +9,6 @@ export namespace Components {
     interface WebshopCart {
     }
     interface WebshopCheckout {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
     }
     interface WebshopItem {
         "name": string;
@@ -57,18 +45,6 @@ declare namespace LocalJSX {
     interface WebshopCart {
     }
     interface WebshopCheckout {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
     }
     interface WebshopItem {
         "name"?: string;
