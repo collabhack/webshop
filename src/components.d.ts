@@ -23,18 +23,9 @@ export namespace Components {
         "middle": string;
     }
     interface WebshopItem {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
+        "name": string;
+        "number": string;
+        "price": string;
     }
 }
 declare global {
@@ -80,18 +71,9 @@ declare namespace LocalJSX {
         "middle"?: string;
     }
     interface WebshopItem {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
+        "name"?: string;
+        "number"?: string;
+        "price"?: string;
     }
     interface IntrinsicElements {
         "webshop-cart": WebshopCart;

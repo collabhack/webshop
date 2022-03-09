@@ -1,4 +1,6 @@
 import { Component, h, Prop } from "@stencil/core"
+// import * as intergiro from "@payfunc/model"
+import { Cart } from "../../model/Cart"
 
 @Component({
 	tag: "webshop-item",
@@ -6,26 +8,25 @@ import { Component, h, Prop } from "@stencil/core"
 	scoped: true,
 })
 export class WebshopItem {
-	/**
-	 * The first name
-	 */
-	@Prop() first: string
-
-	/**
-	 * The middle name
-	 */
-	@Prop() middle: string
-
-	/**
-	 * The last name
-	 */
-	@Prop() last: string
-
-	private getText(): string {
-		return this.first + this.middle + this.last
-	}
-
+	@Prop() name: string
+	@Prop() price: string
+	@Prop() number: string
 	render() {
-		return <div>Hello, World! I'm {this.getText()}</div>
+		return (
+			<div>
+				{this.name}
+				<button
+					onClick={() =>
+						Cart.current.add({
+							name: this.name,
+							quantity: 1,
+							price: Number.parseFloat(this.price),
+							number: this.number,
+						})
+					}>
+					Buy
+				</button>
+			</div>
+		)
 	}
 }
